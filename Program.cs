@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace Programmering_Förberedande_kurs
 {
@@ -26,6 +27,10 @@ namespace Programmering_Förberedande_kurs
                 Console.WriteLine("4) Funktion för att skriva ut dagens datum");
                 Console.WriteLine("5) Funktion som tar två input värden, sedan skriver ut vilket av dem som är störst.");
                 Console.WriteLine("6) Funktion som genererar att slumpmässigt tal mellan 1 och 100.");
+                Console.WriteLine("7) Funktion där användaren skriver in en textrad, som sedan sparas i en fil på hårddisken (Ej klar)");
+                Console.WriteLine("8) Funktion där en fil läses in från hårddisken (Ej klar)");
+                Console.WriteLine("9) Funktion där användaren skickar in ett decimaltal och får tillbaka roten ur, upphöjt till 2 och upphöjt till 10");
+
 
                 Console.WriteLine("\n0) Avsluta");
 
@@ -134,6 +139,45 @@ namespace Programmering_Förberedande_kurs
                             }
                             
                         }
+
+                        Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
+                        Console.ReadKey();
+                        break;
+
+                    case 7:
+                        /*
+                        Console.WriteLine("Skriv en textrad att spara till fil.");
+                        string text = Console.ReadLine();
+
+                        using (TextWriter writer = File.CreateText('C:\\Users\\%username%\\Desktop\\Uppgift7.txt'))
+                        {
+                            writer.WriteLine(text);
+                        }
+                        Console.WriteLine("Texten har sparats i C:\\Skrivbord");
+
+                        Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
+                        Console.ReadKey();*/
+                        break;
+
+                    case 8:
+
+                        break;
+
+                    case 9:
+
+                        Console.WriteLine("Skriv ett decimaltal och tryck [Enter].");
+                        double number = Convert.ToDouble(Console.ReadLine());
+                        double number10 = number;
+
+                        Console.WriteLine("\nRoten ur " + number + " är " + Math.Sqrt(number));
+                        Console.WriteLine(number + " upphöjt med 2 är " + number * number);
+
+                        for (int i = 0; i < 9; i++)
+                        {
+                            number10 = number10 * number;
+                        }
+
+                        Console.WriteLine(number + " upphöjt med 10 är "+number10);
 
                         Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
                         Console.ReadKey();
