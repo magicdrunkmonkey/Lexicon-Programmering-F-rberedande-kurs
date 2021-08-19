@@ -23,7 +23,7 @@ namespace Programmering_Förberedande_kurs
                 Console.WriteLine("-------------");
                 Console.WriteLine("1) Funktion som skriver ut \'Hello World\' i konsolen");
                 Console.WriteLine("2) Funktion som tar in input från användaren (Förnamn, Efternamn, Ålder) och sedan skriver ut dessa i konsolen");
-                Console.WriteLine("3) Funktion som ändrar färgen på texten i konsolen (och ändrar tillbaka om man använder funktionen igen");
+                Console.WriteLine("3) Funktion som ändrar färgen på texten i konsolen (och ändrar tillbaka om man använder funktionen igen).");
                 Console.WriteLine("4) Funktion för att skriva ut dagens datum");
                 Console.WriteLine("5) Funktion som tar två input värden, sedan skriver ut vilket av dem som är störst.");
                 Console.WriteLine("6) Funktion som genererar att slumpmässigt tal mellan 1 och 100.");
@@ -31,6 +31,7 @@ namespace Programmering_Förberedande_kurs
                 Console.WriteLine("8) Funktion där en fil läses in från hårddisken (Ej klar)");
                 Console.WriteLine("9) Funktion där användaren skickar in ett decimaltal och får tillbaka roten ur, upphöjt till 2 och upphöjt till 10");
                 Console.WriteLine("10) Funktion där programmet skriver ut en multiplikationstabell från 1 till 10.");
+                Console.WriteLine("11) Funktion som skapar två arrayer.");
 
                 Console.WriteLine("\n0) Avsluta");
 
@@ -220,6 +221,56 @@ namespace Programmering_Förberedande_kurs
                             //Console.ReadLine();
                         }
 
+                        Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
+                        Console.ReadKey();
+                        break;
+
+                    case 11:
+
+                        {
+                            int[] randomArray = new int[5];
+                            int[] sortedArray = new int[5];
+
+                            //Skapar en "randomArray" med slumpade tal.
+                            Random randNum = new Random();
+                            for (int i = 0; i < randomArray.Length; i++)
+                            {
+                                randomArray[i] = randNum.Next(1, 100);
+                            }
+
+                            //Skriver ut de slumpade talen
+                            Console.WriteLine("Slumpade osorterade nummer i \"array.\"");
+                            for(int i=0; i < randomArray.Length; i++)
+                            {
+                                Console.Write(randomArray[i]+", ");
+                            }
+
+                            //Sorterar "randomArray"
+                            for (int i = 0; i < randomArray.Length; i++)
+                            {
+                                for(int j=i+1; j < randomArray.Length; j++)
+                                {
+                                    if(randomArray[i] > randomArray[j])
+                                    {
+                                        int temp = randomArray[i];
+                                        randomArray[i] = randomArray[j];
+                                        randomArray[j] = temp;
+                                    }
+                                }
+                            }
+
+                            Console.WriteLine();
+
+                            //Skriver ut sorterade nummer
+                            Console.WriteLine("Sorterade nummer i \"array.\"");
+                            for (int i = 0; i < randomArray.Length; i++)
+                            {
+                                Console.Write(randomArray[i] + ", ");
+                            }
+
+
+                        }
+                        
                         Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
                         Console.ReadKey();
                         break;
