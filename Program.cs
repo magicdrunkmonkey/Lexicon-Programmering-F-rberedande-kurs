@@ -30,12 +30,12 @@ namespace Programmering_Förberedande_kurs
                 Console.WriteLine("7) Funktion där användaren skriver in en textrad, som sedan sparas i en fil på hårddisken (Ej klar)");
                 Console.WriteLine("8) Funktion där en fil läses in från hårddisken (Ej klar)");
                 Console.WriteLine("9) Funktion där användaren skickar in ett decimaltal och får tillbaka roten ur, upphöjt till 2 och upphöjt till 10");
-
+                Console.WriteLine("10) Funktion där programmet skriver ut en multiplikationstabell från 1 till 10.");
 
                 Console.WriteLine("\n0) Avsluta");
 
                 //Menu input
-                Console.WriteLine("\nType option and press [Enter]");
+                Console.Write("\nSkriv meny nummer och tryck [Enter]: ");
                 int menuOption = Convert.ToInt32(Console.ReadLine());
 
                 //Switch for menu option
@@ -145,6 +145,9 @@ namespace Programmering_Förberedande_kurs
                         break;
 
                     case 7:
+                        
+                        //Klarar inte uppgiften just nu försöker senare.
+
                         /*
                         Console.WriteLine("Skriv en textrad att spara till fil.");
                         string text = Console.ReadLine();
@@ -161,6 +164,10 @@ namespace Programmering_Förberedande_kurs
 
                     case 8:
 
+                        //Klarar inte uppgiften just nu, försöker senare
+
+                        Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
+                        Console.ReadKey();
                         break;
 
                     case 9:
@@ -183,6 +190,40 @@ namespace Programmering_Förberedande_kurs
                         Console.ReadKey();
                         break;
 
+                    case 10:
+
+                        {
+                            int value = 10;
+
+                            Console.Write("\n\n   |");
+                            for (int x = 1; x <= value; ++x)
+                            Console.Write(" {0, 4}", x);
+                            Console.WriteLine("   ");
+                            Console.WriteLine("________________________________________________________");
+
+                            /*for (int x = 1; x <= value; ++x)
+
+                                Console.WriteLine("{0, 2} |", x);
+                            */
+                            for (int row = 1; row <= value; ++row)
+                            {
+                                Console.Write("{0, 2} |", row);
+                                for (int column = 1; column <= value; ++column)
+                                {
+
+                                    Console.Write("{0, 5}", row * column);
+
+                                }
+                                Console.WriteLine();
+
+                            }
+                            //Console.ReadLine();
+                        }
+
+                        Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
+                        Console.ReadKey();
+                        break;
+
                     case 0:
                         //Environment.Exit(0);
 
@@ -197,6 +238,7 @@ namespace Programmering_Förberedande_kurs
                         break;
                 }
             }
+            Environment.Exit(0);
         }
     }
 }
