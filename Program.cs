@@ -159,11 +159,8 @@ namespace Programmering_Förberedande_kurs
 
                     case 7:
                         {
-
-                            
-
                             string dir = @"C:\George\Uppgift7";
-                            // If directory does not exist, create it
+                            // Skapa mappen om den inte finns
                             if (!Directory.Exists(dir))
                             {
                                 Directory.CreateDirectory(dir);
@@ -185,9 +182,12 @@ namespace Programmering_Förberedande_kurs
                         break;
 
                     case 8:
-
-                        Console.WriteLine("Klarade inte uppgiften just nu, återkommer senare och försöker igen om jag inte glömt göra den.");
-
+                        {
+                            using (TextReader tr = File.OpenText("C:\\George\\Uppgift7\\textraden.txt"))
+                            {
+                                Console.WriteLine(tr.ReadToEnd());
+                            }
+                        }
                         Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
                         Console.ReadKey();
                         break;
