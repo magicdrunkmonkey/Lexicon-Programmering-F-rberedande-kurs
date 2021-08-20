@@ -158,19 +158,28 @@ namespace Programmering_Förberedande_kurs
                         break;
 
                     case 7:
-
-                        Console.WriteLine("Klarade inte uppgiften just nu, återkommer senare och försöker igen om jag inte glömt göra den.");
-
-                        /*
-                        Console.WriteLine("Skriv en textrad att spara till fil.");
-                        string text = Console.ReadLine();
-
-                        using (TextWriter writer = File.CreateText('C:\\Users\\%username%\\Desktop\\Uppgift7.txt'))
                         {
-                            writer.WriteLine(text);
-                        }
-                        Console.WriteLine("Texten har sparats i C:\\Skrivbord");*/
 
+                            
+
+                            string dir = @"C:\George\Uppgift7";
+                            // If directory does not exist, create it
+                            if (!Directory.Exists(dir))
+                            {
+                                Directory.CreateDirectory(dir);
+                            }
+
+                            using (TextWriter writer = File.CreateText("C:\\George\\Uppgift7\\textraden.txt"))
+                            {
+                                Console.Write("Skriv en kort mening: ");
+                                string text = Console.ReadLine();
+                                
+                                writer.WriteLine(text);
+                                
+                            }
+                            Console.WriteLine("Texten sparad under C:\\George\\Uppgift7 i filen textraden.txt");
+                        }
+                                                
                         Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
                         Console.ReadKey();
                         break;
