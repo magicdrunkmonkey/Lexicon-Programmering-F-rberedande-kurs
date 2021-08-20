@@ -36,7 +36,9 @@ namespace Programmering_Förberedande_kurs
                 Console.WriteLine("11) Funktion som skapar två arrayer.");
                 Console.WriteLine("12) Funktion som tar en input från användaren och kontrollerar ifall det är en palindrom.");
                 Console.WriteLine("13) Funktion som tar två inputs från användaren och skriver sedan ut alla siffror som är mellan de två inputsen.");
-                Console.WriteLine("14) Funktion där användaren skickar in ett antal värden (komma-separerade siffror) som sedan sorteras och skrivs ut efter udda och jämna värden.");
+                Console.WriteLine("14) Funktion där användaren skickar in ett antal värden (komma-separerade siffror) som");
+                Console.WriteLine("    sedan sorteras och skrivs ut efter udda och jämna värden.");
+                Console.WriteLine("15) Funktion där användaren skriver in ett antal värden (komma-separerade siffor) som sedan adderas och skrivs ut.");
 
 
                 Console.WriteLine("\n0) Avsluta");
@@ -336,7 +338,7 @@ namespace Programmering_Förberedande_kurs
 
                     case 14:
                         {
-
+                            //Inmatning av siffror från användaren med komma separering
                             Console.WriteLine("Skriv i raden under komma separerade värden.");
                             string commaSepratedString = Console.ReadLine();
                             string[] inputTemp = commaSepratedString.Split(",");
@@ -373,6 +375,29 @@ namespace Programmering_Förberedande_kurs
                                 }
                             }
                             
+                        }
+
+                        Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
+                        Console.ReadKey();
+                        break;
+
+                    case 15:
+                        {
+                            //Inmatning av siffror från användaren med komma separering
+                            Console.WriteLine("Skriv i raden under komma separerade värden.");
+                            string commaSepratedString = Console.ReadLine();
+                            string[] inputTemp = commaSepratedString.Split(",");
+
+                            int[] inputTemp2 = inputTemp.Select(int.Parse).ToArray();
+                                                        
+                            int sum = 0;
+                            for (int i = 0; i < inputTemp2.Length; i++)
+                            {
+                                sum += inputTemp2[i];
+                            }
+
+                            Console.WriteLine("\n\nSumman av alla värdena är " + sum);
+
                         }
 
                         Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
