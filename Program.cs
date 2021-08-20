@@ -39,7 +39,9 @@ namespace Programmering_Förberedande_kurs
                 Console.WriteLine("14) Funktion där användaren skickar in ett antal värden (komma-separerade siffror) som");
                 Console.WriteLine("    sedan sorteras och skrivs ut efter udda och jämna värden.");
                 Console.WriteLine("15) Funktion där användaren skriver in ett antal värden (komma-separerade siffor) som sedan adderas och skrivs ut.");
-
+                Console.WriteLine("16) Funktion där användaren ska ange namnet på sin karaktär och namnet på en motståndare. ");
+                Console.WriteLine("    Funktionen skall sedan själv lägga till slumpmässiga värden för Hälsa, Styrka och Tur, som sparas");
+                Console.WriteLine("    i en instans av en klass.");
 
                 Console.WriteLine("\n0) Avsluta");
 
@@ -339,7 +341,7 @@ namespace Programmering_Förberedande_kurs
                     case 14:
                         {
                             //Inmatning av siffror från användaren med komma separering
-                            Console.WriteLine("Skriv i raden under komma separerade värden.");
+                            Console.WriteLine("Skriv i raden under, komma separerade värden.");
                             string commaSepratedString = Console.ReadLine();
                             string[] inputTemp = commaSepratedString.Split(",");
 
@@ -404,6 +406,43 @@ namespace Programmering_Förberedande_kurs
                         Console.ReadKey();
                         break;
 
+                    case 16:
+                        {
+                            // Funktion där användaren ska ange namnet
+                            // på sin karaktär och namnet på en motståndare.
+                            // Funktionen skall sedan själv lägga till
+                            // slumpmässiga värden för Hälsa, Styrka och
+                            // Tur, som sparas i en instans av en klass.
+
+                            PLayerSheet player1 = new PLayerSheet();
+                            PLayerSheet opponent = new PLayerSheet();
+
+                            Console.Write("\n\nVad är namnet på din karaktär: ");
+                            player1.playerName = Console.ReadLine();
+
+                            Console.Write("Vad är namnet på din monståndare: ");
+                            opponent.opponentName = Console.ReadLine();
+
+                            Console.WriteLine("\n\nSpelare 1");
+                            Console.WriteLine("----------");
+                            Console.WriteLine("Namn:   "+player1.playerName);
+                            Console.WriteLine("Hälsa:  "+player1.health);
+                            Console.WriteLine("Styrka: "+player1.strength);
+                            Console.WriteLine("Tur:    "+player1.luck);
+
+                            Console.WriteLine("\n\nSpelare 2");
+                            Console.WriteLine("-----------");
+                            Console.WriteLine("Namn:   " + opponent.opponentName);
+                            Console.WriteLine("Hälsa:  " + opponent.health);
+                            Console.WriteLine("Styrka: " + opponent.strength);
+                            Console.WriteLine("Tur:    " + opponent.luck);
+                                                                                   
+                        }
+
+                        Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
+                        Console.ReadKey();
+                        break;
+
                     case 0:
                         //Environment.Exit(0);
 
@@ -419,6 +458,47 @@ namespace Programmering_Förberedande_kurs
                 }
             }
             Environment.Exit(0);
+        }
+
+        public class PLayerSheet
+        {
+            Random rand = new Random();
+                        
+            public string playerName 
+            { 
+                get; 
+                set; 
+            }
+            public string opponentName 
+            { 
+                get; 
+                set; 
+            }
+            public int health 
+            { 
+                get 
+                { 
+                    return rand.Next(0, 100); 
+                } 
+            }
+            public int strength 
+            { 
+                get
+                {
+                    return rand.Next(0, 100);
+                }
+                set
+                {
+
+                }
+            }
+            public int luck 
+            { 
+                get 
+                { 
+                    return rand.Next(0, 100); 
+                } 
+            }
         }
     }
 }
