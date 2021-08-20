@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Programmering_Förberedande_kurs
 {
@@ -34,6 +36,8 @@ namespace Programmering_Förberedande_kurs
                 Console.WriteLine("11) Funktion som skapar två arrayer.");
                 Console.WriteLine("12) Funktion som tar en input från användaren och kontrollerar ifall det är en palindrom.");
                 Console.WriteLine("13) Funktion som tar två inputs från användaren och skriver sedan ut alla siffror som är mellan de två inputsen.");
+                Console.WriteLine("14) Funktion där användaren skickar in ett antal värden (komma-separerade siffror) som sedan sorteras och skrivs ut efter udda och jämna värden.");
+
 
                 Console.WriteLine("\n0) Avsluta");
 
@@ -45,104 +49,106 @@ namespace Programmering_Förberedande_kurs
                 switch (menuOption)
                 {
                     case 1:
-                        Console.WriteLine("\nHello World!");
-
+                        {
+                            Console.WriteLine("\nHello World!");
+                        }
+                            
                         Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
                         Console.ReadKey();
-                        Console.Clear();
                         break;
 
                     case 2:
-                        string firstName;
-                        string lastName;
-                        string age;
+                        {
+                            string firstName;
+                            string lastName;
+                            string age;
 
-                        Console.WriteLine("\nFörnamn: ");
-                        firstName = Console.ReadLine();
-                        Console.WriteLine("\nEfternamn: ");
-                        lastName = Console.ReadLine();
-                        Console.WriteLine("\nÅlder: ");
-                        age = Console.ReadLine();
+                            Console.WriteLine("\nFörnamn: ");
+                            firstName = Console.ReadLine();
+                            Console.WriteLine("\nEfternamn: ");
+                            lastName = Console.ReadLine();
+                            Console.WriteLine("\nÅlder: ");
+                            age = Console.ReadLine();
 
-                        Console.WriteLine("\nNamn: " + firstName + " " + lastName + "\nÅlder: " + age);
-
+                            Console.WriteLine("\nNamn: " + firstName + " " + lastName + "\nÅlder: " + age);
+                        }
                         Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
                         Console.ReadKey();
                         Console.Clear();
                         break;
 
                     case 3:
-
-                        if(background == 1)
                         {
-                            background = 0;
+                            if (background == 1)
+                            {
+                                background = 0;
 
-                            // Set the Foreground color to blue
-                            Console.ForegroundColor = ConsoleColor.Blue;
-                        }
-                        else
-                        {
-                            background = 1;
+                                // Set the Foreground color to blue
+                                Console.ForegroundColor = ConsoleColor.Blue;
+                            }
+                            else
+                            {
+                                background = 1;
 
-                            // Reset forground color
-                            Console.ResetColor();
-                        }
-                                                
+                                // Reset forground color
+                                Console.ResetColor();
+                            }
+                        }                     
                         break;
 
                     case 4:
-
-                        DateTime thisDay = DateTime.Today;
-                        Console.WriteLine("\nIdag är det "+thisDay.ToString("D"));
-
+                        {
+                            DateTime thisDay = DateTime.Today;
+                            Console.WriteLine("\nIdag är det " + thisDay.ToString("D"));
+                        }
                         Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
                         Console.ReadKey();
                         break;
 
                     case 5:
+                        {
+                            double num1, num2;
 
-                        double num1, num2;
+                            Console.WriteLine("Skriv ett valfritt nummer");
+                            num1 = Convert.ToDouble(Console.ReadLine());
 
-                        Console.WriteLine("Skriv ett valfritt nummer");
-                        num1 = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine("\nSkriv ett till valfritt nummer");
+                            num2 = Convert.ToDouble(Console.ReadLine());
 
-                        Console.WriteLine("\nSkriv ett till valfritt nummer");
-                        num2 = Convert.ToDouble(Console.ReadLine());
-
-                        if (num1 > num2)
-                            Console.WriteLine("\n"+num1 + " är större än " + num2);
-                        else if (num2 > num1)
-                            Console.WriteLine("\n"+num2 + " är större än " + num1);
-                        else
-                            Console.WriteLine("\nBåda värdena är lika.");
-
+                            if (num1 > num2)
+                                Console.WriteLine("\n" + num1 + " är större än " + num2);
+                            else if (num2 > num1)
+                                Console.WriteLine("\n" + num2 + " är större än " + num1);
+                            else
+                                Console.WriteLine("\nBåda värdena är lika.");
+                        }
                         Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
                         Console.ReadKey();
                         break;
 
                     case 6:
-
-                        Random rnd = new Random();
-                        int randomNumber = rnd.Next(1, 100);
-                        
-                        Console.WriteLine("\nGissa på ett tal mellan 1 och 100.");
-                        
-                        while (caseSixLoop)
                         {
-                            int guessNumber = Convert.ToInt32(Console.ReadLine());
+                            Random rnd = new Random();
+                            int randomNumber = rnd.Next(1, 100);
 
-                            if (guessNumber > randomNumber)
-                                Console.WriteLine("\nGissad number är för högt!");
-                            else if (guessNumber < randomNumber)
-                                Console.WriteLine("\nGissad number är för lågt!");
-                            else
+                            Console.WriteLine("\nGissa på ett tal mellan 1 och 100.");
+
+                            while (caseSixLoop)
                             {
-                                Console.WriteLine("\nRätt gissat!");
-                                caseSixLoop = false;
-                            }
-                            
-                        }
+                                int guessNumber = Convert.ToInt32(Console.ReadLine());
 
+                                if (guessNumber > randomNumber)
+                                    Console.WriteLine("\nGissad number är för högt!");
+                                else if (guessNumber < randomNumber)
+                                    Console.WriteLine("\nGissad number är för lågt!");
+                                else
+                                {
+                                    Console.WriteLine("\nRätt gissat!");
+                                    caseSixLoop = false;
+                                }
+
+                            }
+                        }
                         Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
                         Console.ReadKey();
                         break;
@@ -174,27 +180,26 @@ namespace Programmering_Förberedande_kurs
                         break;
 
                     case 9:
-
-                        Console.WriteLine("Skriv ett decimaltal och tryck [Enter].");
-                        double number = Convert.ToDouble(Console.ReadLine());
-                        double number10 = number;
-
-                        Console.WriteLine("\nRoten ur " + number + " är " + Math.Sqrt(number));
-                        Console.WriteLine(number + " upphöjt med 2 är " + number * number);
-
-                        for (int i = 0; i < 9; i++)
                         {
-                            number10 = number10 * number;
+                            Console.WriteLine("Skriv ett decimaltal och tryck [Enter].");
+                            double number = Convert.ToDouble(Console.ReadLine());
+                            double number10 = number;
+
+                            Console.WriteLine("\nRoten ur " + number + " är " + Math.Sqrt(number));
+                            Console.WriteLine(number + " upphöjt med 2 är " + number * number);
+
+                            for (int i = 0; i < 9; i++)
+                            {
+                                number10 = number10 * number;
+                            }
+
+                            Console.WriteLine(number + " upphöjt med 10 är " + number10);
                         }
-
-                        Console.WriteLine(number + " upphöjt med 10 är "+number10);
-
                         Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
                         Console.ReadKey();
                         break;
 
                     case 10:
-
                         {
                             int value = 10;
 
@@ -228,7 +233,6 @@ namespace Programmering_Förberedande_kurs
                         break;
 
                     case 11:
-
                         {
                             int[] randomArray = new int[5];
                             int[] sortedArray = new int[5];
@@ -278,7 +282,6 @@ namespace Programmering_Förberedande_kurs
                         break;
 
                     case 12:
-
                         {
                             string wordTest, wordTemp = "";
                             
@@ -306,7 +309,6 @@ namespace Programmering_Förberedande_kurs
                         break;
 
                     case 13:
-
                         {
                             int startNum, endNum;
                             
@@ -325,9 +327,52 @@ namespace Programmering_Förberedande_kurs
                                     break;
                                 }
                                 Console.Write(", ");
+                            }                                                        
+                        }
+
+                        Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
+                        Console.ReadKey();
+                        break;
+
+                    case 14:
+                        {
+
+                            Console.WriteLine("Skriv i raden under komma separerade värden.");
+                            string commaSepratedString = Console.ReadLine();
+                            string[] inputTemp = commaSepratedString.Split(",");
+
+                            int[] inputTemp2 = inputTemp.Select(int.Parse).ToArray();
+
+                            //Sorterar array
+                            for (int i = 0; i < inputTemp2.Length; i++)
+                            {
+                                for (int j = i + 1; j < inputTemp2.Length; j++)
+                                {
+                                    if (inputTemp2[i] > inputTemp2[j])
+                                    {
+                                        int temp = inputTemp2[i];
+                                        inputTemp2[i] = inputTemp2[j];
+                                        inputTemp2[j] = temp;
+                                    }
+                                }
                             }
 
-                            //Console.WriteLine(startNum); //Testing lines
+                            //Kontrollerar om siffran är jämn eller udda och skriver ut bredvid vilket det är
+                            for (int i=0 ; i < inputTemp2.Length; i++)
+                            {
+                                //int tempNumber = Convert.ToInt32(inputTemp[i]);
+                                Console.Write(inputTemp2[i]);
+
+                                if (inputTemp2[i] % 2 == 0) //Kontrollera om siffran är jämn
+                                {
+                                    Console.WriteLine(" <-- Jämn siffra");
+                                }
+                                else
+                                {
+                                    Console.WriteLine(" >-- Udda siffra");
+                                }
+                            }
+                            
                         }
 
                         Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
