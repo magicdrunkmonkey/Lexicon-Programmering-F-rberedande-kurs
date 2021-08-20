@@ -33,6 +33,7 @@ namespace Programmering_Förberedande_kurs
                 Console.WriteLine("10) Funktion där programmet skriver ut en multiplikationstabell från 1 till 10.");
                 Console.WriteLine("11) Funktion som skapar två arrayer.");
                 Console.WriteLine("12) Funktion som tar en input från användaren och kontrollerar ifall det är en palindrom.");
+                Console.WriteLine("13) Funktion som tar två inputs från användaren och skriver sedan ut alla siffror som är mellan de två inputsen.");
 
                 Console.WriteLine("\n0) Avsluta");
 
@@ -286,11 +287,11 @@ namespace Programmering_Förberedande_kurs
                             Console.Write("Skriv ordet: ");
                             wordTest = Console.ReadLine();
 
-                            for (int i = wordTest.Length - 1; i >= 0; i--) //String Reverse  
+                            for (int i = wordTest.Length - 1; i >= 0; i--) //Tar ut en bokstav i taget från testordet och  
                             {
-                                wordTemp += wordTest[i].ToString();
+                                wordTemp += wordTest[i].ToString();        //placeras omvänd ordning en bokstav i taget i annan variabel temporärt.
                             }
-                            if (wordTemp == wordTest) // Checking whether string is palindrome or not  
+                            if (wordTemp == wordTest) // Kontrollera om testordet och det omvända tempordet är lika.  
                             {
                                 Console.WriteLine("\n\nOrdet är palindrom \n\n Inskrivna ordet var {0} och omvänt är ordet {1}", wordTest, wordTemp);
                             }
@@ -298,6 +299,35 @@ namespace Programmering_Förberedande_kurs
                             {
                                 Console.WriteLine("\n\nOrdet är inte palindrom \n\n Inskrivna ordet var {0} och omvänt är ordet {1}", wordTest, wordTemp);
                             }                                                        
+                        }
+
+                        Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
+                        Console.ReadKey();
+                        break;
+
+                    case 13:
+
+                        {
+                            int startNum, endNum;
+                            
+                            Console.WriteLine("\n\nRäkna upp alla siffrorna från ett startnummer och ett slutnummer");
+                            Console.WriteLine("________________________________________________________________\n\n");
+                            Console.Write("Skriv in startnumret: ");
+                            startNum = Convert.ToInt32(Console.ReadLine());
+                            Console.Write("Skriv in slutnumret: ");
+                            endNum = Convert.ToInt32(Console.ReadLine());
+
+                            for (int i = startNum; i <= endNum; i++)
+                            {
+                                Console.Write(i); // + ", ");
+                                if (i == endNum)
+                                {
+                                    break;
+                                }
+                                Console.Write(", ");
+                            }
+
+                            //Console.WriteLine(startNum); //Testing lines
                         }
 
                         Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
