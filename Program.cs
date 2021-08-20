@@ -32,6 +32,7 @@ namespace Programmering_Förberedande_kurs
                 Console.WriteLine("9) Funktion där användaren skickar in ett decimaltal och får tillbaka roten ur, upphöjt till 2 och upphöjt till 10");
                 Console.WriteLine("10) Funktion där programmet skriver ut en multiplikationstabell från 1 till 10.");
                 Console.WriteLine("11) Funktion som skapar två arrayer.");
+                Console.WriteLine("12) Funktion som tar en input från användaren och kontrollerar ifall det är en palindrom.");
 
                 Console.WriteLine("\n0) Avsluta");
 
@@ -146,8 +147,8 @@ namespace Programmering_Förberedande_kurs
                         break;
 
                     case 7:
-                        
-                        //Klarar inte uppgiften just nu försöker senare.
+
+                        Console.WriteLine("Klarade inte uppgiften just nu, återkommer senare och försöker igen om jag inte glömt göra den.");
 
                         /*
                         Console.WriteLine("Skriv en textrad att spara till fil.");
@@ -157,15 +158,15 @@ namespace Programmering_Förberedande_kurs
                         {
                             writer.WriteLine(text);
                         }
-                        Console.WriteLine("Texten har sparats i C:\\Skrivbord");
+                        Console.WriteLine("Texten har sparats i C:\\Skrivbord");*/
 
                         Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
-                        Console.ReadKey();*/
+                        Console.ReadKey();
                         break;
 
                     case 8:
 
-                        //Klarar inte uppgiften just nu, försöker senare
+                        Console.WriteLine("Klarade inte uppgiften just nu, återkommer senare och försöker igen om jag inte glömt göra den.");
 
                         Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
                         Console.ReadKey();
@@ -271,6 +272,34 @@ namespace Programmering_Förberedande_kurs
 
                         }
                         
+                        Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
+                        Console.ReadKey();
+                        break;
+
+                    case 12:
+
+                        {
+                            string wordTest, wordTemp = "";
+                            
+                            Console.WriteLine("\n\nPalindrom kollen");
+                            Console.WriteLine("________________\n");
+                            Console.Write("Skriv ordet: ");
+                            wordTest = Console.ReadLine();
+
+                            for (int i = wordTest.Length - 1; i >= 0; i--) //String Reverse  
+                            {
+                                wordTemp += wordTest[i].ToString();
+                            }
+                            if (wordTemp == wordTest) // Checking whether string is palindrome or not  
+                            {
+                                Console.WriteLine("\n\nOrdet är palindrom \n\n Inskrivna ordet var {0} och omvänt är ordet {1}", wordTest, wordTemp);
+                            }
+                            else
+                            {
+                                Console.WriteLine("\n\nOrdet är inte palindrom \n\n Inskrivna ordet var {0} och omvänt är ordet {1}", wordTest, wordTemp);
+                            }                                                        
+                        }
+
                         Console.WriteLine("\nTryck valfri tangent för att återgå till menyn...");
                         Console.ReadKey();
                         break;
